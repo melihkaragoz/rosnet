@@ -1,0 +1,730 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+}
+
+body {
+    width: 100%;
+    /*background-color:darkslategrey;*/
+    background-color: black;
+    color: lightslategray;
+    position: relative;
+}
+
+input {
+    outline: none;
+}
+
+
+/* ################## ADD - ROS ################# */
+
+.large_ros {
+    width: 80%;
+    margin-top: 2%;
+    margin-left: 35%;
+}
+
+.middle_ros {
+    width: 200%;
+    border-radius: 7px;
+    /*background-color: rgb(14, 47, 58);*/
+    background-color: transparent;
+    padding: 10px;
+}
+
+.middle_ros input {
+    width: 85%;
+    height: 2em;
+    display: inline;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: rgb(77, 67, 67);
+    border: none;
+    color: white;
+    outline: none;
+}
+
+.middle_ros button {
+    width: 15%;
+    background-color: rgba(35, 84, 136, 0.1);
+    display: inline;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: 2%;
+    color: white;
+    height: 4em;
+    cursor: pointer;
+}
+
+.middle_ros button:hover {
+    background-color: rgb(20, 71, 112);
+}
+
+.refresh {
+    margin-top: 2%;
+}
+
+
+/* ############################################# */
+
+
+/* ################## HASHTAGS ################# */
+
+.hashtags {
+    float: left;
+    position: fixed;
+    top: 8%;
+    left: 2%;
+    width: 20%;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+    background-color: transparent;
+}
+
+.hashtags .h-top {
+    padding: 8px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.hashtags .h-body {
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.hashtags .h-body ul {
+    list-style-type: none;
+}
+
+.hashtags .h-body ul li {
+    padding: 2px;
+    margin-bottom: 5%;
+    color: white;
+    cursor: pointer;
+}
+
+.hashtags .h-body ul li b {
+    color: #da1f26;
+}
+
+.hashtags .h-body ul li:hover {
+    color: #da1f26;
+}
+
+.profile-data {
+    position: fixed;
+    min-width: 15%;
+    max-width: 30%;
+    border-radius: 7px;
+    border: 1px solid gray;
+    padding: 1px;
+    vertical-align: center;
+    cursor: pointer;
+}
+
+.profile-data:hover {
+    border-bottom: 3px solid gray !important;
+    cursor: pointer;
+}
+
+.profile-data img {
+    display: inline;
+    cursor: pointer;
+}
+
+.profile-data strong {
+    position: absolute;
+    cursor: pointer;
+    top: 10%;
+    left: 45%;
+}
+
+.profile-data strong:hover {
+    color: #da1f26;
+}
+
+
+/* ################## VIEW - ROS ################# */
+
+.main {
+    display: none;
+    width: 59%;
+    margin-left: 21%;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: transparent;
+    position: relative;
+}
+
+.closePost {
+    position: absolute;
+    right: 1%;
+    top: 1%;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.closePost:hover {
+    color: #da1f26;
+}
+
+.add-ros {
+    display: none;
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    border: 2px solid rgba(20, 71, 112, 0.1);
+    ;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(20, 71, 112, 0.2);
+}
+
+.add-ros #postPic {
+    position: absolute;
+    top: 15%;
+    left: 2%;
+    background-color: transparent;
+}
+
+.add-ros textarea {
+    margin-top: 1%;
+    margin-left: 2%;
+    width: 46%;
+    height: 8em;
+    background-color: rgba(198, 226, 255, 0.09);
+    padding: 8px;
+    border-radius: 7px;
+    border: none;
+    resize: none;
+    display: inline;
+}
+
+.add-ros #postFile {
+    display: none;
+}
+
+.add-ros i {
+    display: block;
+    position: absolute;
+    text-align: right;
+    width: 5%;
+    font-size: 30px;
+    bottom: 10%;
+    color: rgba(35, 84, 136, 0.5);
+    cursor: pointer;
+    right: 29%;
+}
+
+.add-ros i:hover {
+    color: rgb(20, 71, 112);
+}
+
+.add-ros button {
+    display: block;
+    width: 10%;
+    margin-left: 38%;
+    margin-top: 2%;
+    height: 3em;
+    left: 100%;
+    background-color: rgba(35, 84, 136, 0.1);
+}
+
+.add-btn {
+    width: 5.5%;
+    position: absolute;
+    right: 10%;
+    top: 1.2em;
+    font-size: 40px;
+    cursor: pointer;
+    /*background-color: rgb(25, 50, 90);*/
+    /*background-color:  rgb(56, 46, 46);*/
+    color: white;
+    border-radius: 50%;
+    padding: 12px;
+    text-align: center;
+    background-image: url(../media/plus2.gif);
+    height: 1em;
+    background-size: cover;
+}
+
+.add-btn:hover {
+    background-color: rgb(20, 71, 112);
+}
+
+.roses {
+    margin-top: 15%;
+    padding: 30px;
+    font-size: 13px;
+    /*background-image: url(../media/rose-neon.gif);*/
+    background-repeat: no-repeat;
+}
+
+.person {
+    width: 100%;
+    border-bottom: 1px solid rgb(56, 46, 46);
+    border-left: 1px solid#da1f26;
+    border-radius: 7px;
+    margin-bottom: 2%;
+    /*background-color: rgb(14, 47, 58);*/
+    background-color: rgba(198, 226, 255, 0.04);
+    padding: 10px;
+}
+
+.profile {
+    width: 100%;
+    color: gray;
+    font-weight: 600;
+    padding: 5px;
+    position: relative;
+}
+
+.main .roses .person .profile .name img {
+    border-radius: 50%;
+    margin-right: 1.5%;
+}
+
+strong {
+    display: block;
+    width: 100%;
+    margin-top: 2%;
+    padding: 5px;
+    padding-top: 8px;
+}
+
+.main .person .ros_img {
+    width: 60%;
+    height: 60%;
+    margin-left: 20%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.main .person .profile .date {
+    position: absolute;
+    top: 15%;
+    right: 4%;
+}
+
+.main .roses .delete_ros {
+    position: absolute;
+    top: 15%;
+    right: 1%;
+    color: #da1f26;
+    cursor: pointer;
+}
+
+.main .roses .person .name b {
+    cursor: pointer;
+}
+
+.main .roses .person .name b:hover {
+    color: #807c69;
+}
+
+.main .person .actions {
+    text-align: right;
+}
+
+.main .person .actions .act {
+    cursor: pointer;
+    margin-left: 1.5%;
+    font-size: 15px;
+}
+
+.main .person .actions .act-like:hover {
+    color: rgb(146, 17, 17);
+}
+
+.main .person .actions .act-liked {
+    color: rgb(146, 17, 17);
+}
+
+.main .person .actions .act-comment:hover {
+    color: rgb(20, 71, 112);
+}
+
+.main .person .actions form {
+    display: inline;
+}
+
+.main .person .actions .likeBtn {
+    background-color: transparent;
+    border: none;
+}
+
+
+/* ###################### MAIN - PROFILE ##################### */
+
+.main-profile {
+    display: block;
+    width: 50%;
+    margin-left: 8%;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: transparent;
+    position: relative;
+}
+
+.main-profile .profile-body {
+    width: 80%;
+    margin-top: 5%;
+    margin-left: 50%;
+    position: relative;
+}
+
+.main-profile .profile-body .profile-pic {
+    width: 30%;
+    border: 1px solid #807c69;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.main-profile .profile-body .profile-pic img {
+    width: 75%;
+    margin-left: 13%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 5px;
+}
+
+.main-profile .profile-body .profile-pic form input {
+    display: none;
+}
+
+.main-profile .profile-body .profile-pic form button {
+    position: absolute;
+    top: 43%;
+    width: 15%;
+    left: 15%;
+    font-size: 12px;
+    background-color: transparent;
+    padding: 10px;
+    border: 2px solid rgba(35, 84, 136, 0.5);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.main-profile .profile-body .profile-pic form button:hover {
+    border: 1px solid #ddaccd;
+}
+
+.main-profile .profile-body .profile-pic i {
+    display: block;
+    position: absolute;
+    text-align: right;
+    width: 5%;
+    font-size: 30px;
+    top: 45%;
+    color: rgba(35, 84, 136, 0.5);
+    cursor: pointer;
+    left: 3%;
+}
+
+.main-profile .profile-body .profile-pic i:hover {
+    color: rgb(20, 71, 112);
+}
+
+.main-profile .profile-body .profile-name {
+    position: absolute;
+    top: 15%;
+    left: 45%;
+    font-size: 25px;
+}
+
+.main-profile .profile-body .profile-other {
+    margin-top: 20%;
+    margin-left: 0%;
+}
+
+.main-profile .profile-body .profile-other b {
+    margin-left: 3%;
+    color: #807c69;
+}
+
+.changepassbtn {
+    display: none;
+}
+
+.adduserbtn {
+    display: none;
+}
+
+.backtomain {
+    display: none;
+}
+
+.backtologin {
+    display: none;
+}
+
+
+/* ########################################################## */
+
+
+/* ###################### GIF ##################### */
+
+.gif {
+    width: 37%;
+    height: 30em;
+    position: absolute;
+    background-image: url(../media/rose-2.gif);
+    opacity: 0.04;
+    background-size: cover;
+    position: fixed;
+    top: 15%;
+    right: 32%;
+    z-index: -50;
+}
+
+
+/* ############################################### */
+
+
+/* ###################### SAG MENU ##################### */
+
+.navigator {
+    position: fixed;
+    width: 20%;
+    /*border-left: .5px solid rgb(56, 46, 46);*/
+    top: 8%;
+    right: 2.8%;
+    padding: 10px;
+    font-size: 19px;
+    text-align: left;
+}
+
+.navigator ul {
+    margin-left: 30%;
+    list-style-type: none;
+    margin-top: 10%;
+}
+
+.navigator ul li {
+    margin-bottom: 15%;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.navigator ul li i {
+    color: #da1f26;
+    margin-right: 4%;
+}
+
+.navigator ul li:hover {
+    color: #da1f26;
+    border-right: 1px solid #da1f26;
+}
+
+
+/* ##################################################### */
+
+
+/* ###################### DELETE ROS ##################### */
+
+.delete-ros-func {
+    display: none;
+    width: 30%;
+    background-color: rgba(20, 71, 112, 0.2);
+    position: fixed;
+    top: 35%;
+    left: 35%;
+    padding: 20px;
+    border-radius: 8px;
+    color: black;
+}
+
+.delete-ros-func .buttons {
+    text-align: right;
+    color: #da1f26;
+}
+
+.delete-ros-func .buttons button {
+    color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: rgba(35, 84, 136, 0.1);
+}
+
+.delete-ros-func .buttons button:hover {
+    background-color: rgb(20, 71, 112);
+}
+
+.delete-ros-func p {
+    margin-bottom: 10%;
+}
+
+
+/* ####################################################### */
+
+@media only screen and (min-width: 800px) {
+    .profile-data {
+        bottom: 8%;
+        left: 2%;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        width: 100%;
+        overflow-y: auto;
+    }
+    .main {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .gif {
+        left: .5%;
+        width: 90%;
+    }
+    .hashtags {
+        display: none;
+    }
+    .navigator {
+        display: none;
+    }
+    .main-profile {
+        width: 100%;
+        margin: 0;
+    }
+    .main-profile .profile-body {
+        width: 60%;
+        position: relative;
+        margin-left: 5%;
+        margin-bottom: 20%;
+    }
+    .main-profile .profile-body .profile-pic {
+        min-width: 60%;
+        max-width: 60%;
+        margin-left: 45%;
+    }
+    .main-profile .profile-body .profile-pic img {
+        max-width: 75;
+        min-height: 70px;
+        max-height: 120px;
+    }
+    .main-profile .profile-body .profile-name {
+        top: 100%;
+        left: 62%;
+    }
+    .main-profile .profile-body .profile-pic i {
+        margin-top: 55%;
+        top: 50%;
+        left: 50%;
+    }
+    .main-profile .profile-body .profile-pic form button {
+        position: absolute;
+        margin-top: 50%;
+        top: 50%;
+        left: 70%;
+        width: 35%;
+    }
+    .main-profile .profile-body .profile-other {
+        margin-top: 60%;
+        width: 130%;
+        margin-left: 15%;
+        position: absolute;
+        padding-bottom: 50%;
+    }
+    .main-profile .profile-body .profile-other strong {
+        margin-left: 5%;
+        width: 90%;
+    }
+    .main-profile .profile-body .profile-other #data-mail {
+        font-size: 15px;
+    }
+    .changepassbtn {
+        display: block;
+        position: absolute;
+        bottom: 22%;
+        margin-left: 5%;
+        left: 10;
+        padding: 10px;
+        border-radius: 8px;
+        width: 90%;
+        text-align: center;
+        background-color: transparent;
+        border: 1px solid rgb(20, 71, 112);
+        cursor: pointer;
+    }
+    .changepassbtn button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+    .adduserbtn {
+        display: none;
+        position: fixed;
+        bottom: 18%;
+        left: 20%;
+        padding: 10px;
+        border-radius: 8px;
+        width: 65%;
+        text-align: center;
+        background-color: transparent;
+        border: 1px solid rgb(20, 71, 112);
+        cursor: pointer;
+    }
+    .adduserbtn button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+    .backtomain {
+        display: block;
+        position: absolute;
+        bottom: 2%;
+        margin-left: 5%;
+        left: 0;
+        padding: 10px;
+        border-radius: 8px;
+        width: 45%;
+        text-align: center;
+        background-color: transparent;
+        border: 1px solid gray;
+        cursor: pointer;
+    }
+    .backtomain button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+    .backtologin {
+        text-align: center;
+        display: block;
+        position: absolute;
+        bottom: 2%;
+        margin-left: 5%;
+        left: 50%;
+        padding: 10px;
+        border-radius: 8px;
+        width: 40%;
+        background-color: transparent;
+        border: 1px solid #da1f26;
+        cursor: pointer;
+    }
+    .backtologin button {
+        background-color: transparent;
+        border: none;
+        color: #da1f26;
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+
+/* ############################################# */

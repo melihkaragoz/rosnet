@@ -1,0 +1,205 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+}
+
+body {
+    width: 100%;
+    /*background-color:darkslategrey;*/
+    background-color: black;
+    color: lightslategray;
+    position: relative;
+}
+
+input {
+    outline: none;
+}
+
+
+/* ############################################# */
+
+
+/* ################## ADD - USER ################# */
+
+.main {
+    width: 59%;
+    margin-left: 11%;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: transparent;
+    position: relative;
+}
+
+strong {
+    display: block;
+    width: 100%;
+    position: relative;
+    margin-top: 2%;
+    padding: 5px;
+    padding-top: 8px;
+}
+
+#homepage {
+    display: none;
+}
+
+.main .add_user {
+    position: absolute;
+    margin-top: 25%;
+    margin-right: 0;
+}
+
+.main .add_user input {
+    background-color: rgb(33, 33, 33);
+    padding: 7px;
+    display: block;
+    margin-bottom: 8%;
+    border: 1px solid rgb(45, 84, 86);
+    border-radius: 5px;
+}
+
+.main .add_user button {
+    margin-top: 10%;
+    width: 50%;
+    background-color: rgb(45, 84, 86);
+    padding: 7px;
+    border: 2px solid rgb(45, 84, 86);
+    border-radius: 5px;
+    margin-left: 25%;
+    cursor: pointer;
+}
+
+.main .add_user button:hover {
+    background-color: rgb(60, 100, 100);
+}
+
+.main .add_user p {
+    margin-left: 18%;
+    margin-top: 10%;
+    font-weight: 600;
+}
+
+.main .add_user #reg_ok {
+    color: green;
+}
+
+.main .add_user #reg_err {
+    color: #da1f26;
+}
+
+
+/* ###################### GIF ##################### */
+
+.gif {
+    width: 37%;
+    height: 30em;
+    position: absolute;
+    background-image: url(../media/rose-2.gif);
+    opacity: 0.04;
+    background-size: cover;
+    position: fixed;
+    top: 15%;
+    right: 32%;
+    z-index: -50;
+}
+
+
+/* ############################################### */
+
+
+/* ###################### SAG MENU ##################### */
+
+.navigator {
+    position: fixed;
+    width: 20%;
+    /*border-left: .5px solid rgb(56, 46, 46);*/
+    top: 8%;
+    right: 2%;
+    padding: 10px;
+    font-size: 19px;
+    text-align: left;
+}
+
+.navigator ul {
+    margin-left: 30%;
+    list-style-type: none;
+    margin-top: 10%;
+}
+
+.navigator ul li {
+    margin-bottom: 15%;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.navigator ul li i {
+    color: #da1f26;
+    margin-right: 4%;
+}
+
+.navigator ul li:hover {
+    color: #da1f26;
+    border-right: 1px solid #da1f26;
+}
+
+
+/* ##################################################### */
+
+
+/* ####################################################### */
+
+@media only screen and (min-width: 800px) {
+    .profile-data {
+        bottom: 8%;
+        left: 2%;
+    }
+    .main .add_user {
+        margin-left: 40%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #homepage {
+        display: block;
+        width: 25%;
+        position: fixed;
+        right: 3%;
+        top: 5%;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 9px;
+        border-right: 2px solid gray;
+        border-bottom: 2px solid gray;
+        border-radius: 7px;
+    }
+    #homepage:hover {
+        border-right: 2px solid #da1f26;
+        border-bottom: 2px solid #da1f26;
+    }
+    #homepage i {
+        color: #da1f26;
+        margin-right: 1%;
+    }
+    /* TELEFON İÇİN */
+    body {
+        width: 70%;
+    }
+    .main {
+        width: 100%;
+        margin-left: 35%;
+        margin-top: 40%;
+    }
+    .gif {
+        left: .5%;
+        width: 90%;
+    }
+    .navigator {
+        display: none;
+    }
+}
+
+
+/* ############################################# */

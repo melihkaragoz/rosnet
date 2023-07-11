@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Nixie+One);
+
+:root {
+    /* Base font size */
+    font-size: 5px;
+
+    /* Change neon color */
+    --neon-color: #da1f26;
+    /*  rgb(24,102,167); */
+    --neon-pink: #ff00dd;
+    
+}
+
+body{
+    width: 95%;
+    /*background-image: url('../media/neon-bg-1.jpg');*/
+    background-color: rgba(0, 0, 0, .98);
+}
+
+.main{
+    margin-top: 5%;
+}
+
+.left{
+    width: 40%;
+    float: left;
+    margin-left: 8%;
+    display: inline;
+}
+
+img{
+    width: 80%;
+}
+
+.right{
+    float: right;
+    margin-right: 2%;
+    width: 40%
+    
+}
+
+.main .right .box{
+    width: 100%;
+    margin-top: 20%;
+    border: 1px solid  #da1f26;
+    position: relative;
+    border-radius: 10px;
+    background-color:  rgba(0, 0, 0, .1);
+    padding: 8px;
+    /*box-shadow: 0 20px 50px rgb(24, 102, 167);*/
+    box-shadow: 0 20px 50px #da1f26;
+}
+
+
+form{
+    margin-left:20%;
+    margin-top: 20%;
+    width: 100%;
+}
+
+input{
+    width: 60%;
+    display: block;
+    margin-bottom: 10%;
+    border: none;
+    background-color: transparent;  
+    padding: 10px;
+    border-bottom: 1px solid #da1f26;
+    color: white;
+    outline: none;
+    border-radius: 7px;    
+}
+
+form button{
+    width: 30%;
+    margin-left: 15%;
+    margin-bottom: 5%;
+    background-color: transparent;
+    padding: 8px;
+    color: white;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 
+    0 0 0.5rem #fff, 
+    inset 0 0 0.5rem #fff,
+    0 0 2rem var(--neon-color), 
+    inset 0 0 2rem var(--neon-color),
+    0 0 4rem var(--neon-color), 
+    inset 0 0 4rem var(--neon-color);
+}
+
+.banner{
+    position: fixed;
+    top: 22%;
+    right: 27%;
+}
+
+.banner #ros{
+    color:rgb(24,102,167);
+    font-size: 15px;
+    border: 2px solid rgb(24,102,167);
+    padding: 10px;
+    border-radius: 7px;
+    color: #fff;
+    padding: 3rem 6rem;
+    border: 0.4rem solid #fff;
+    border-radius: 3rem;
+    text-transform: uppercase;
+    transform: rotate(-10deg);
+    text-shadow: 
+    -0.2rem -0.2rem 1rem #fff, 
+    0.2rem 0.2rem 1rem #fff,
+    0 0 2rem var(--neon-color), 
+    0 0 4rem var(--neon-color),
+    0 0 6rem var(--neon-color), 
+    0 0 8rem var(--neon-color),
+    0 0 10rem var(--neon-color);
+    box-shadow: 
+    0 0 0.5rem #fff, 
+    inset 0 0 0.5rem #fff,
+    0 0 2rem var(--neon-color), 
+    inset 0 0 2rem var(--neon-color),
+    0 0 4rem var(--neon-color), 
+    inset 0 0 4rem var(--neon-color);
+}
+
+
+h1::-moz-selection {background-color: var(--neon-color);}
+h1::selection {background-color: var(--neon-color);}
+
+@media only screen and (max-width: 900px) {
+
+    .main{
+        margin: 0;
+    }
+
+    .main .left{
+        position: fixed;
+        width: 80%;
+        top:10%;
+        left:20%;
+        z-index: -20;
+        opacity: 0.2;
+        margin: 0;
+    }   
+
+    .main .right{
+        position: absolute;
+        width: 80%;
+        top:10%;
+        left: 10%;
+        z-index: 5;
+        margin: 0;
+    }
+
+    .main .banner{
+        top:25%;
+        left: 3%;
+        width: 35%;
+    }
+
+    .main .banner #ros{
+        transform: rotate(-20deg);
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .main{
+        margin: 0;
+    }
+
+    .main .right{
+        position: absolute;
+        width: 90%;
+        top:10%;
+        left: 5%;
+        z-index: 5;
+        margin: 0;
+    }
+
+    .main .banner{
+        display: none;
+    }
+
+
+
+
+
+}
