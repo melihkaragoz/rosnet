@@ -10,7 +10,7 @@ $activeDirectory = "uploads/$username";
     if($_GET || $noDir){
         if(isset($_GET['f'])){
             $_recieve_data =  $_GET['f'];
-            $_rec_data = explode('/',$_recieve_data);
+            $_rec_data = explode('/',$_recieve_data ?? '');
             unset($_rec_data[1]);
             $_data = implode('/',$_rec_data);
             $_getDir = "uploads/$username".$_data;
@@ -38,7 +38,7 @@ $activeDirectory = "uploads/$username";
             if($status_code == '12')$status = "Bu klasör zaten sistemde bulunuyor.";
 
             $colors = ['green','red','green','orange','green','green','green','red','red','red','green','orange'];
-        } 
+        }
     }
 
 $_SESSION['active_directory'] = $activeDirectory;
@@ -56,9 +56,9 @@ $_SESSION['active_directory'] = $activeDirectory;
             <input id="body-form-button" type="submit" value="Yükle">
             <input type="file" name="klasor" webkitdirectory directory multiple value="klasor">
         </form>
-       
+
     </div>
-    
+
 
 
     <div class="body-list">
@@ -73,7 +73,7 @@ $_SESSION['active_directory'] = $activeDirectory;
             <br><br>
             <form id="checkboxform">
                 <?php
-                    $_tmp_backDir = explode('/',$activeDirectory);
+                    $_tmp_backDir = explode('/',$activeDirectory ?? '');
                     unset($_tmp_backDir[0]);
                     $_SESSION['directory_without_upload'] = implode('/',$_tmp_backDir);
                     $_dir_str = $_tmp_backDir[count($_tmp_backDir)];
@@ -83,7 +83,7 @@ $_SESSION['active_directory'] = $activeDirectory;
                 ?>
             <a href="<?php echo("roshub.php?f=/" .$_backDir) ?>"><img src="media/backDir.png" alt="back_to_main_directory" id='backDir' width="25" height="25"></a><?php echo("<p id='_dir_str'>$_dir_str</p>") ?>
             <div class="_files">
-            <?php 
+            <?php
                 $username = $_SESSION['username'];
                 $dir = "uploads";
                 if(isset($activeDirectory) && ($activeDirectory != 'null')){
@@ -92,9 +92,9 @@ $_SESSION['active_directory'] = $activeDirectory;
                         if($dosya != "uploads/code" && $dosya != "uploads/totalfiles"){
                             $dosya = str_replace($dir,"",$dosya);
                             $dosya = str_replace('//',"",$dosya);
-                            $_dosya= str_replace($username."/","",$dosya);    
-                            //$_dosya= str_replace("/","",$_dosya); 
-                            $_new_dir = explode('/',$_dosya);
+                            $_dosya= str_replace($username."/","",$dosya);
+                            //$_dosya= str_replace("/","",$_dosya);
+                            $_new_dir = explode('/',$_dosya ?? '');
                             $newDir = $_new_dir[count($_new_dir)-1];
                             $dirORfile = "";
                             if(is_dir($activeDirectory.'/'.$newDir)) $dirORfile = 'dir_p';
@@ -148,7 +148,7 @@ $_SESSION['active_directory'] = $activeDirectory;
         </div>
 
     </div>
-    
+
 </div>
 
 <div id="areYouSure">

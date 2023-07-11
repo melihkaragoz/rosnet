@@ -46,9 +46,9 @@ if(isset($_POST) && $_SESSION['USER']){
         elseif ($info['mime'] == 'image/png') $image = imagecreatefrompng($source);
         imagejpeg($image, $destination, $quality);
       }
-    
+
       $hata = $_FILES['ros_file']['error'];
-    
+
       if($hata != 0) {
         $newTMP = 'NULL';
         echo 'Yüklenirken bir hata gerçekleşmiş.';
@@ -57,20 +57,20 @@ if(isset($_POST) && $_SESSION['USER']){
         print_r($_FILES);
      }else{
         $boyut = $_FILES['ros_file']['size'];
-    
+
         if($boyut > (1024*1024*50)){
           echo 'Dosya 50MB den büyük olamaz.';
         }else{
           $tip = $_FILES['ros_file']['type'];
           $isim = $_FILES['ros_file']['name'];
           $dosya = $_FILES['ros_file']['tmp_name'];
-          $uzanti = explode('.', $isim);
+          $uzanti = explode('.', $isim ?? '');
           $uzanti = $uzanti[count($uzanti)-1];
           if($tip == 'image/png' || $tip == 'image/jpeg' || $tip == 'image/jpg' || $tip == 'video/mp4' || $tip == 'video/wav'){
             $idNO = $last_ros_id['ros_id'] +1;
             $newTMP = $_SESSION['USER'] . "-" . $idNO . "." . $uzanti;
             if($tip == 'image/png' || $tip == 'image/jpeg' || $tip == 'image/jpg'){
-    
+
               $filename = $_FILES['ros_file']['name'];
               $valid_ext = array('png','jpeg','jpg');
               $location = 'ROS_FILES/' . $newTMP;
@@ -78,7 +78,7 @@ if(isset($_POST) && $_SESSION['USER']){
               $file_extension = strtolower($file_extension);
               if(in_array($file_extension,$valid_ext)) compressImage($_FILES['ros_file']['tmp_name'],$location,50);
               else echo "Bilinmeyen dosya uzantısı.";
-              
+
             }elseif($tip == 'video/mp4' || $tip == 'video/wav'){
               $uploadCheck = move_uploaded_file($dosya, 'ROS_FILES/' . $newTMP);
               echo $uploadCheck ? 'Dosyanız upload edildi!' : "dosya upload edilemedi.";
@@ -95,7 +95,7 @@ if(isset($_POST) && $_SESSION['USER']){
       if($hata1 != 0) {
          $newTMP = 'NULL';
          echo 'Yüklenirken bir hata gerçekleşmiş.';
-         $imgErr = true;        
+         $imgErr = true;
          header('Location: profile.php');
       }else {
          $boyut = $_FILES['changeProfilePic']['size'];
@@ -104,7 +104,7 @@ if(isset($_POST) && $_SESSION['USER']){
             $tip = $_FILES['changeProfilePic']['type'];
             $isim = $_FILES['changeProfilePic']['name'];
             $dosya = $_FILES['changeProfilePic']['tmp_name'];
-            $uzanti = explode('.', $isim);
+            $uzanti = explode('.', $isim ?? '');
             $uzanti = $uzanti[count($uzanti)-1];
             if($tip == 'image/png' || $tip == 'image/jpeg' || $tip == 'image/jpg' || $tip = 'application/octet-stream'){
               $newTMP = $username . "." . $uzanti;

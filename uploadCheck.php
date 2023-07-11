@@ -14,7 +14,7 @@ if($_FILES["filex"]) {
             header('Location:roshub.php?s=3');
         }elseif($sonuc){
             //basarili
-            $_yol = explode('/',$yol);
+            $_yol = explode('/',$yol ?? '');
             unset($_yol[0]);
             $yol = implode('/',$_yol);
             header('Location:roshub.php?s=1&f=/'.$yol);
@@ -30,7 +30,7 @@ if($_FILES["filex"]) {
             header('Location:roshub.php?s=2');
         }
     }
-    
+
 
 }elseif(isset($_POST['createDirectory']) && empty(!$_POST['createDirectory'])){
     $_newDir = $_POST['createDirectory'];

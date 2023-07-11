@@ -34,9 +34,9 @@ session_start();
             $liked_check = false;
             $likedRosID = $_POST['likedRosId'];
             $likeRos = $baglanti->query("SELECT * FROM ros WHERE ros_id = $likedRosID");
-            $likeRos_result = $likeRos->fetch_array();            
+            $likeRos_result = $likeRos->fetch_array();
             $ros_liked_username = $likeRos_result['ros_liked_username'];
-            $liked_users_list = explode(',',$ros_liked_username);
+            $liked_users_list = explode(',',$ros_liked_username ?? '');
             $myUserName = $_SESSION['USER'];
             for($i=0; $i<count($liked_users_list); $i++){
                 if($liked_users_list[$i] == $_SESSION['USER']) $liked_check = true;
@@ -149,7 +149,7 @@ session_start();
                         <?php
                         if($total_ros['ros_file']!='NULL'){
                             $file_url = $total_ros['ros_file'];
-                            $media_ext = explode(".",$file_url);
+                            $media_ext = explode(".",$file_url ?? '');
                             $ext = $media_ext[count($media_ext)-1];
                             if($ext == "mp4" || $ext == "wav") echo("<video width=400 height=400 controls class='ros_img'> <source src='ROS_FILES/$file_url' type='video/$ext'></video>");
                             else echo("<img class='ros_img' src='ROS_FILES/$file_url' width=400 height=400>");
@@ -163,16 +163,16 @@ session_start();
                             <?php
                                 $haveIliked = false;
                                 $ros_liked_username = $total_ros['ros_liked_username'];
-                                $liked_users_list = explode(',',$ros_liked_username);
+                                $liked_users_list = explode(',',$ros_liked_username ?? '');
                                 for($i=0; $i<count($liked_users_list); $i++){
                                     if($liked_users_list[$i] == $_SESSION['USER']) $haveIliked = true;
                                 }
                                 if(!$haveIliked) echo("<button class='likeBtn' name='liked' ><i class='fa fa-heart act act-like'></i></button>");
                                 else echo("<button class='likeBtn' name='liked' ><i class='fa fa-heart act act-liked'></i></button>");
                             ?>
-                        </form> 
+                        </form>
                         <i onclick="viewLikes(<?php echo($total_ros['ros_id']) ?>);" id='likeCount'><?php echo($total_ros['ros_like']) ?></i>
-                        <?php 
+                        <?php
                         $cmt_ros_id = $total_ros['ros_id'];
                         $comment_db = $baglanti->query("SELECT * FROM comments WHERE cmt_ros_id = $cmt_ros_id ");
                         ?>
@@ -214,8 +214,8 @@ session_start();
                         $likerUsers_db = $baglanti->query("SELECT * FROM ros WHERE ros_id = '$this_ros'");
                         $likerUsers = $likerUsers_db->fetch_array();
                         $likers = $likerUsers['ros_liked_username'];
-                        $likers_users_list = explode(',',$likers);
-                        for($i=0; $i<count($likers_users_list); $i++){                        
+                        $likers_users_list = explode(',',$likers ?? '');
+                        for($i=0; $i<count($likers_users_list); $i++){
                         ?>
                         <li><?php echo($likers_users_list[$i]) ?></li>
                         <?php } ?>
@@ -232,7 +232,7 @@ session_start();
         <div class="buttons">
             <button name="deleteRos_yes" onclick="delete_yes();">Evet</button>
             <button name="deleteRos_no" onclick="delete_no();">Vazgeç</button>
-        </div>  
+        </div>
     </div>
 
     <div class="navigator" id="navigatorMenu">
